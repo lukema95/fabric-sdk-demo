@@ -6,7 +6,7 @@ func register(ctx *gin.Context){
 	user, _ := ctx.Params.Get("user")
 	pwd, _ := ctx.Params.Get("password")
 
-	secret, err := org1Client.RegisterUser(user,pwd,department)
+	secret, err := org1Client.RegisterUser(user,pwd,(userConf["department"]).(string))
 	if err != nil{
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),

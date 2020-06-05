@@ -4,7 +4,7 @@ import "github.com/gin-gonic/gin"
 
 func save(ctx *gin.Context){
 	id, _ := ctx.Params.Get("id")
-	resp, err := org1Client.SaveChannel(id,channelConfigPath)
+	resp, err := org1Client.SaveChannel(id, (channelConf["config_path"]).(string))
 	if err != nil{
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),

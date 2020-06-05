@@ -1,10 +1,12 @@
 package service
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 func install(ctx *gin.Context){
 	version, _ := ctx.Params.Get("version")
-	err := org1Client.InstallCC(version, peer0Org1)
+	err := org1Client.InstallCC(version, peerConf["org1"].(string))
 	if err != nil {
 		ctx.JSON(400, gin.H{
 			"error": err.Error(),
@@ -19,7 +21,7 @@ func install(ctx *gin.Context){
 
 func instantiate(ctx *gin.Context){
 	version, _ := ctx.Params.Get("version")
-	txID, err := org1Client.InstantiateCC(version,peer0Org1)
+	txID, err := org1Client.InstantiateCC(version,peerConf["org1"].(string))
 	if err != nil{
 		ctx.JSON(400, gin.H{
 			"error": err.Error(),
@@ -33,7 +35,7 @@ func instantiate(ctx *gin.Context){
 }
 
 func invoke(ctx *gin.Context){
-	resp, err := org1Client.InvokeCC([]string{peer0Org1})
+	resp, err := org1Client.InvokeCC([]string{peerConf["org1"].(string)})
 	if err != nil{
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),
@@ -49,7 +51,7 @@ func invoke(ctx *gin.Context){
 
 func delete(ctx *gin.Context){
 	key, _ := ctx.Params.Get("key")
-	resp, err := org1Client.InvokeCCDelete([]string{peer0Org1},key)
+	resp, err := org1Client.InvokeCCDelete([]string{peerConf["org1"].(string)},key)
 	if err != nil{
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),
@@ -65,7 +67,7 @@ func delete(ctx *gin.Context){
 
 func query(ctx *gin.Context){
 	key, _ := ctx.Params.Get("key")
-	resp, err := org1Client.QueryCC(peer0Org1,key)
+	resp, err := org1Client.QueryCC(peerConf["org1"].(string),key)
 	if err != nil{
 		 ctx.JSON(500, gin.H{
 		 	"error" : resp.Responses,

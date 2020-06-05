@@ -3,34 +3,36 @@ package service
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/hyperledger/fabric-sdk-go-sample-gm/client"
+	"github.com/spf13/viper"
 	"log"
 )
 
-var (
-	peer0Org1 = "peer0.org1.example.com"
-	peer0Org2 = "peer0.org2.example.com"
-
-	userName = "user12"
-	password = "pw"
-	department = "com"
-
-	channelID = "businesschannel"
-	channelConfigPath= "./config/businesschannel.tx"
-
-	eventFilter = "event123"
-	txID = "21bc37e36c753bc67b098e808e0993d4c11815e51dfc2b5f2eb50dab28a91c85"
+var(
+	peerConf map[string]interface{}
+	orgnizeConf map[string]interface{}
+	userConf map[string]interface{}
+	adminConf map[string]interface{}
+	chaincodeConf map[string]interface{}
+	channelConf map[string]interface{}
+	configPath map[string]interface{}
 )
 
+
 var org1Client *client.Client
-var org2Client *client.Client
 
 func Run(){
 	log.Println(" ============= 开启服务 ===============")
-	org1Client = client.New("./config/org1-config.yaml", "Org1", "Admin", "User1")
-	org2Client = client.New("./config/org2-config.yaml", "Org2", "Admin", "User1")
 
+	peerConf = viper.GetStringMap("peer")
+	orgnizeConf = viper.GetStringMap("organization")
+	userConf = viper.GetStringMap("user")
+	adminConf = viper.GetStringMap("admin")
+	chaincodeConf = viper.GetStringMap("chaincode")
+	channelConf = viper.GetStringMap("channel")
+	configPath = viper.GetStringMap("path")
+
+	org1Client = client.New()
 	defer org1Client.SDK.Close()
-	defer org2Client.SDK.Close()
 
 	router := gin.New()
 
@@ -78,4 +80,6 @@ func Run(){
 	}
 	router.Run(":9090")
 }
+
+
 
