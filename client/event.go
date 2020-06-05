@@ -4,6 +4,7 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"log"
 )
+
 // RegisterBlockEvent registers for block events. If the caller does not have permission
 func (c * Client) RegisterBlockEvent() (fab.Registration, error){
 	registration, _, err := c.eventClient.RegisterBlockEvent()

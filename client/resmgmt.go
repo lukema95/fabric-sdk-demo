@@ -176,8 +176,8 @@ func (c *Client) QueryCC(peer, keys string) (channel.Response, error) {
 
 func (c *Client) UpgradeCC(v string, peer string) error {
 	// endorser policy
-	org1AndOrg2 := "AND('Org1MSP.member','Org2MSP.member')"
-	ccPolicy, err := c.genPolicy(org1AndOrg2)
+	org1OrOrg2 := "OR('Org1MSP.member','Org2MSP.member')"
+	ccPolicy, err := c.genPolicy(org1OrOrg2)
 	if err != nil {
 		return errors.WithMessage(err, "gen policy from string error")
 	}

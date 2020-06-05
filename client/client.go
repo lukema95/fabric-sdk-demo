@@ -1,6 +1,7 @@
 package client
 
 import (
+	"github.com/spf13/viper"
 	"log"
 	"os"
 
@@ -36,17 +37,24 @@ type Client struct {
 	CCGoPath  string // GOPATH used for chaincode
 }
 
-func New(cfg, org, admin, user string) *Client {
-	c := &Client{
-		ConfigPath: cfg,
-		OrgName:    org,
-		OrgAdmin:   admin,
-		OrgUser:    user,
+func New() *Client {
+	orgnizeConf := viper.GetStringMap("organization")
+	userConf := viper.GetStringMap("user")
+	adminConf := viper.GetStringMap("admin")
+	chaincodeConf := viper.GetStringMap("chaincode")
+	channelConf := viper.GetStringMap("channel")
+	configPath := viper.GetStringMap("path")
 
-		CCID:      "example2",
-		CCPath:    "github.com/hyperledger/fabric-samples/chaincode/chaincode_example02/go/",
+	c := &Client{
+		ConfigPath: configPath["org1"].(string),
+		OrgName:    orgnizeConf["org1"].(string),
+		OrgAdmin:   adminConf["name"].(string),
+		OrgUser:    userConf["name"].(string),
+
+		CCID:      chaincodeConf["id"].(string),
+		CCPath:    chaincodeConf["path"].(string),
 		CCGoPath:  os.Getenv("GOPATH"),
-		ChannelID: "mychannel",
+		ChannelID: channelConf["id"].(string),
 	}
 
 	// create sdk
