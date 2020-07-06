@@ -25,10 +25,10 @@ client:
   organization: Org1
   logging:
     # Develope can using debug to get more information
-#    level: debug
+    #    level: debug
     level: info
   cryptoconfig:
-    path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config
+    path: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config
   # Some SDKs support pluggable KV stores, the properties under "credentialStore"
   # are implementation specific
   credentialStore:
@@ -43,11 +43,11 @@ client:
       enabled: true
       default:
         provider: "SW"
-#      hashAlgorithm: "SHA2"
-#      algorithm: "ECDSA"
+      hashAlgorithm: "SHA2"
+      algorithm: "ECDSA"
       # 启用国密算法
-      hashAlgorithm: "SM3"
-      algorithm: "SM2"
+      #      hashAlgorithm: "SM3"
+      #      algorithm: "SM2"
       softVerify: true
       level: 256
 
@@ -56,8 +56,8 @@ client:
     systemCertPool: true
     # [Optional]. Client key and cert for TLS handshake with peers and orderers
     client:
-      keyfile: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/tls/client.key
-      certfile: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/tls/client.cert
+      keyfile: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/tls/client.key
+      certfile: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/tls/client.cert
 
 
 
@@ -150,7 +150,7 @@ organizations:
   Org1:
     mspid: Org1MSP
     # set msp files path
-    cryptoPath: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org1.example.com/users/{username}@org1.example.com/msp
+    cryptoPath: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/peerOrganizations/org1.example.com/users/{username}@org1.example.com/msp
 
     # Add peers for org1
     peers:
@@ -168,7 +168,7 @@ organizations:
   # fabric-ca registrar enroll ID and secret, etc.
   Org2:
     mspid: Org2MSP
-    cryptoPath: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org2.example.com/users/{username}@org2.example.com/msp
+    cryptoPath: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/peerOrganizations/org2.example.com/users/{username}@org2.example.com/msp
 
     # Add peers for org2
     peers:
@@ -181,7 +181,7 @@ organizations:
   ordererorg:
     # Membership Service Provider ID for this organization
     mspID: OrdererMSP
-    cryptoPath: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp
+    cryptoPath: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp
 
 
 #
@@ -192,7 +192,7 @@ organizations:
 orderers:
   orderer.example.com:
     # [Optional] Default: Infer from hostname
-    url: grpcs://localhost:7050
+    url: grpc://localhost:7050
 
     # these are standard properties defined by the gRPC library
     # they will be passed in as-is to gRPC client constructor
@@ -205,12 +205,12 @@ orderers:
       fail-fast: false
 
       #will be taken into consideration if address has no protocol defined, if true then grpc or else grpcs
-      allow-insecure: false
+      allow-insecure: true
 
     tlsCACerts:
       # Certificate location absolute path
       # Replace to orderer cert path
-      path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem
+      path: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem
 
 #
 # List of peers to send various requests to, including endorsement, query
@@ -221,7 +221,7 @@ peers:
     # this URL is used to send endorsement and query requests
     # [Optional] Default: Infer from hostname
 
-    url: grpcs://localhost:7051
+    url: grpc://localhost:7051
     eventUrl: localhost:7053
 
     #TODO to be moved to high level, common for all grpc connections
@@ -233,15 +233,15 @@ peers:
       fail-fast: false
 
       #will be taken into consideration if address has no protocol defined, if true then grpc or else grpcs
-      allow-insecure: false
+      allow-insecure: true
 
     tlsCACerts:
       # Certificate location absolute path
-      path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+      path: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
 
   peer0.org2.example.com:
     # Replace the port
-    url: grpcs://localhost:9051
+    url: grpc://localhost:9051
     grpcOptions:
       ssl-target-name-override: peer0.org2.example.com
       keep-alive-time: 0s
@@ -250,23 +250,23 @@ peers:
       fail-fast: false
 
       #will be taken into consideration if address has no protocol defined, if true then grpc or else grpcs
-      allow-insecure: false
+      allow-insecure: true
     tlsCACerts:
-      path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+      path: /Users/jjvincent/work/go/src/github.com/hyperledger/config/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
 
 
 certificateAuthorities:
   ca.org1.example.com:
-    url:  https://localhost:7054
+    url:  http://localhost:7054
     httpOptions:
       verify: false
     tlsCACerts:
-      path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric-ca/cmd/fabric-ca-server/tls-cert.pem
-#      client:
-#        key:
-#          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.key
-#        cert:
-#          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.crt
+      path: /Users/jjvincent/work/go/src/github.com/hyperledger/config/z-ledger-ca/tls-cert.pem
+    #      client:
+    #        key:
+    #          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.key
+    #        cert:
+    #          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.crt
     registrar:
       enrollId: admin
       enrollSecret: adminpw

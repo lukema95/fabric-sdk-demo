@@ -37,7 +37,7 @@ type Client struct {
 	CCGoPath  string // GOPATH used for chaincode
 }
 
-func New() *Client {
+func NewFabric() *Client {
 	orgnizeConf := viper.GetStringMap("organization")
 	userConf := viper.GetStringMap("user")
 	adminConf := viper.GetStringMap("admin")
@@ -81,13 +81,13 @@ func New() *Client {
 	}
 	log.Println("Initialized channel client")
 
-// 	// create msp client
-// 	mctx := sdk.Context(fabsdk.WithUser(c.OrgAdmin), fabsdk.WithOrg(c.OrgName))
-// 	c.mspClient, err = msp.New(mctx)
-// 	if err != nil{
-// 		log.Panicf("failed to create msp client: %s", err)
-// 	}
-// 	log.Println("Initialized msp client")
+	// 	// create msp client
+	// 	mctx := sdk.Context(fabsdk.WithUser(c.OrgAdmin), fabsdk.WithOrg(c.OrgName))
+	// 	c.mspClient, err = msp.New(mctx)
+	// 	if err != nil{
+	// 		log.Panicf("failed to create msp client: %s", err)
+	// 	}
+	// 	log.Println("Initialized msp client")
 
 	// create event client
 	ectx := sdk.ChannelContext(c.ChannelID, fabsdk.WithUser(c.OrgUser))
@@ -106,4 +106,45 @@ func New() *Client {
 	log.Println("Initialized ledger client")
 
 	return c
+}
+
+func NewFabCA()  *Client{
+	orgnizeConf := viper.GetStringMap("organization")
+	userConf := viper.GetStringMap("user")
+	adminConf := viper.GetStringMap("admin")
+	chaincodeConf := viper.GetStringMap("chaincode")
+	channelConf := viper.GetStringMap("channel")
+	configPath := viper.GetStringMap("path")
+
+	c := &Client{
+		ConfigPath: configPath["org1"].(string),
+		OrgName:    orgnizeConf["org1"].(string),
+		OrgAdmin:   adminConf["name"].(string),
+		OrgUser:    userConf["name"].(string),
+
+		CCID:      chaincodeConf["id"].(string),
+		CCPath:    chaincodeConf["path"].(string),
+		CCGoPath:  os.Getenv("GOPATH"),
+		ChannelID: channelConf["id"].(string),
+	}
+
+	// create sdk
+	sdk, err := fabsdk.New(config.FromFile(c.ConfigPath))
+	if err != nil {
+		log.Panicf("failed to create fabric sdk: %s", err)
+	}
+	c.SDK = sdk
+	log.Println("Initialized fabric sdk")
+
+		// create msp client
+		mctx := sdk.Context(fabsdk.WithUser(c.OrgAdmin), fabsdk.WithOrg(c.OrgName))
+		c.mspClient, err = msp.New(mctx)
+		if err != nil{
+			log.Panicf("failed to create msp client: %s", err)
+		}
+		log.Println("Initialized msp client")
+
+
+	return c
+
 }

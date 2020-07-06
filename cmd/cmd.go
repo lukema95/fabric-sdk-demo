@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/hyperledger/fabric-sdk-go-sample-gm/service"
+	"github.com/hyperledger/Z-Ledger-SDK-Go-Sample/service"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
@@ -14,7 +14,8 @@ func init()  {
 	serviceCmd.PersistentFlags().StringVar(&configPath, "config-path", "./config", "config file path")
 	cobra.OnInitialize(InitConfig)
 	viper.BindPFlag("config-path", serviceCmd.PersistentFlags().Lookup("config-path"))
-	serviceCmd.AddCommand(startCmd)
+	serviceCmd.AddCommand(fabricCmd)
+	serviceCmd.AddCommand(fabriCACmd)
 }
 
 func InitConfig() {
@@ -37,11 +38,19 @@ var serviceCmd = &cobra.Command{
 
 }
 
-var startCmd = &cobra.Command{
-	Use: "start",
-	Short: "Start service",
+var fabricCmd = &cobra.Command{
+	Use: "fabric",
+	Short: "Start fabric service",
 	Run: func(cmd *cobra.Command, args []string) {
-		service.Run()
+		service.RunFabric()
+	},
+}
+
+var fabriCACmd = &cobra.Command{
+	Use: "ca",
+	Short: "Start fabric ca service",
+	Run: func(cmd *cobra.Command, args []string) {
+		service.RunFabCA()
 	},
 }
 

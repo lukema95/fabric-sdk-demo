@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/hyperledger/fabric-sdk-go-sample-gm/client"
-	"github.com/hyperledger/fabric-sdk-go-sample-gm/cmd"
+	"github.com/hyperledger/Z-Ledger-SDK-Go-Sample/client"
+	"github.com/hyperledger/Z-Ledger-SDK-Go-Sample/cmd"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"log"
 	"testing"
@@ -17,7 +17,7 @@ func TestChainCode(t *testing.T) {
 
 	peer0Org1 := "peer0.org1.example.com"
 
-	org1Client := client.New()
+	org1Client := client.NewFabric()
 
 	if err := org1Client.InstallCC("v1", peer0Org1); err != nil {
 		//log.Panicf("Intall chaincode error: %v", err)
@@ -80,7 +80,7 @@ func TestMSP(t *testing.T){
 
 	cmd.InitConfig()
 
-	org1Client := client.New()
+	org1Client := client.NewFabCA()
 
 	_, err := org1Client.EnrollUser("admin","adminpw")
 	if err != nil {
@@ -105,7 +105,7 @@ func TestChannel(t *testing.T){
 
 	cmd.InitConfig()
 
-	org1Client := client.New()
+	org1Client := client.NewFabric()
 
 	//_, err := org1Client.QueryChannels(resmgmt.WithTargets(nil))
 	//if err != nil{
@@ -134,7 +134,7 @@ func TestEvent(t *testing.T){
 
 	cmd.InitConfig()
 
-	org1Client := client.New()
+	org1Client := client.NewFabric()
 
 	registration, err := org1Client.RegisterBlockEvent()
 	if err != nil{
@@ -167,7 +167,7 @@ func TestLedger(t *testing.T){
 
 	cmd.InitConfig()
 
-	org1Client := client.New()
+	org1Client := client.NewFabric()
 
 	_, err := org1Client.QueryInfo()
 	if err != nil{

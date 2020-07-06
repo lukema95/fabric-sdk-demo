@@ -12,7 +12,7 @@
   "user": {
     "name": "User1",
     "password": "pw",
-    "department": "com"
+    "department": "org1.department1"
   },
 
   "admin": {
