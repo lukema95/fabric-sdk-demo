@@ -256,21 +256,21 @@ peers:
       path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
 
 
-certificateAuthorities:
-  ca.org1.example.com:
-    url:  http://localhost:7054
-    httpOptions:
-      verify: false
-    tlsCACerts:
-      #path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric-ca/cmd/fabric-ca-server/tls-cert.pem
-      #path: /Users/jjvincent/work/go/src/github.com/hyperledger/config/z-ledger-ca/tls-cert.pem
-      path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
-    #      client:
-    #        key:
-    #          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.key
-    #        cert:
-    #          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.crt
-    registrar:
-      enrollId: admin
-      enrollSecret: adminpw
-    caName:
+#certificateAuthorities:
+#  ca.org1.example.com:
+#    url:  http://localhost:7054
+#    httpOptions:
+#      verify: false
+#    tlsCACerts:
+#      #path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric-ca/cmd/fabric-ca-server/tls-cert.pem
+#      #path: /Users/jjvincent/work/go/src/github.com/hyperledger/config/z-ledger-ca/tls-cert.pem
+#      path: /Users/jjvincent/work/go/src/github.com/hyperledger/fabric/examples/network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+#    #      client:
+#    #        key:
+#    #          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.key
+#    #        cert:
+#    #          path: ${CRYPTO_CONFIG_PATH}/peerOrganizations/org1.supply.com/users/User1@org1.supply.com/tls/client.crt
+#    registrar:
+#      enrollId: admin
+#      enrollSecret: adminpw
+#    caName:

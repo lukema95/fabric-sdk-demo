@@ -20,17 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90384d0e-869c-40aa-b4d2-7f569803c9ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/config_back.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keystore/40c116e06e9e24284a6695104f6b9c933cf0fc7efab0baebc4014cd9955a0d82_sk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keystore/68c2d1be99108d80764a768006db823dc2463d97e8f748240b9caa979821210f_sk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keystore/896f95908b8f5e680d0360d806e8a72c317fe02303a1727190a21614c3efbf6a_sk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keystore/dad5815a43d2d68eac8ee44eaf595f2b2508c7b8b35ae96509304a2aa142d146_sk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keystore/e6ddf2f2ace67168d2425227a1afb5814edc269766fdb616a906788eb232906a_sk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msp/keystore/dad5815a43d2d68eac8ee44eaf595f2b2508c7b8b35ae96509304a2aa142d146_sk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msp/keystore/e6ddf2f2ace67168d2425227a1afb5814edc269766fdb616a906788eb232906a_sk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/cmd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/org1-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/org1-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/org2-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/z-ledger-sdk-go-sample" beforeDir="false" afterPath="$PROJECT_DIR$/z-ledger-sdk-go-sample" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +45,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/keystore" />
       <recent name="$PROJECT_DIR$/msp/keystore" />
     </key>
