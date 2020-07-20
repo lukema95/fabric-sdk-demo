@@ -39,7 +39,7 @@ var serviceCmd = &cobra.Command{
 }
 
 var fabricCmd = &cobra.Command{
-	Use: "fabric",
+	Use: "z-ledger",
 	Short: "Start fabric service",
 	Run: func(cmd *cobra.Command, args []string) {
 		service.RunFabric()

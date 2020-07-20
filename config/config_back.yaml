@@ -1,0 +1,38 @@
+{
+  "peer": {
+    "org1": "peer0.org1.example.com",
+    "org2": "peer0.org2.example.com"
+  },
+
+  "organization": {
+    "org1": "Org1",
+    "org2": "Org2"
+  },
+
+  "user": {
+    "name": "User1",
+    "password": "pw",
+    "department": "admin"
+  },
+
+  "admin": {
+    "name": "Admin",
+    "password": "adminpw"
+  },
+
+  "chaincode": {
+    "id": "example2",
+    "path": "github.com/hyperledger/fabric-samples/chaincode/chaincode_example02/go/"
+  },
+
+  "channel": {
+    "id": "mychannel",
+    "new_channel": "businesschannel",
+    "config_path": "./config/businesschannel.tx"
+  },
+
+  "path": {
+    "org1": "./config/org1-config.yaml",
+    "org2": "./config/org2-config.yaml"
+  }
+}
