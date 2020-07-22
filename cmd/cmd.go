@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/hyperledger/Z-Ledger-SDK-Go-Sample/service"
+	"github.com/hyperledger/z-ledger-sdk-go-sample/service"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"

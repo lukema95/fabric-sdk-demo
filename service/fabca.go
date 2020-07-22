@@ -3,7 +3,7 @@ package service
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/hyperledger/Z-Ledger-SDK-Go-Sample/client"
+	"github.com/hyperledger/z-ledger-sdk-go-sample/client"
 	"github.com/spf13/viper"
 	"log"
 	"os"
