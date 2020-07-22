@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/hyperledger/Z-Ledger-SDK-Go-Sample/client"
-	"github.com/hyperledger/Z-Ledger-SDK-Go-Sample/cmd"
+	"github.com/hyperledger/z-ledger-sdk-go-sample/client"
+	"github.com/hyperledger/z-ledger-sdk-go-sample/cmd"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"log"
 	"testing"

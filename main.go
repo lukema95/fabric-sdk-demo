@@ -1,6 +1,6 @@
 package main
 
-import "github.com/hyperledger/Z-Ledger-SDK-Go-Sample/cmd"
+import "github.com/hyperledger/z-ledger-sdk-go-sample/cmd"
 
 func main() {
 
