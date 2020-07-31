@@ -81,13 +81,13 @@ func NewFabric() *Client {
 	}
 	log.Println("Initialized channel client")
 
-	// 	// create msp client
-	// 	mctx := sdk.Context(fabsdk.WithUser(c.OrgAdmin), fabsdk.WithOrg(c.OrgName))
-	// 	c.mspClient, err = msp.New(mctx)
-	// 	if err != nil{
-	// 		log.Panicf("failed to create msp client: %s", err)
-	// 	}
-	// 	log.Println("Initialized msp client")
+	// create msp client
+	mctx := sdk.Context(fabsdk.WithUser(c.OrgAdmin), fabsdk.WithOrg(c.OrgName))
+	c.mspClient, err = msp.New(mctx)
+	if err != nil{
+		log.Panicf("failed to create msp client: %s", err)
+	}
+	log.Println("Initialized msp client")
 
 	// create event client
 	ectx := sdk.ChannelContext(c.ChannelID, fabsdk.WithUser(c.OrgUser))
