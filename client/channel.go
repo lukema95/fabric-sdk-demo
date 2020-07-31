@@ -23,7 +23,7 @@ func (c *Client) SaveChannel(channelId string, channelConfigPath string) (string
 	}
 
 	//resps, err := c.resMgtClient.SaveChannel(req)
-	resps, err := c.resMgtClient.SaveChannel(req,resmgmt.WithOrdererEndpoint("grpcs://localhost:7050"))
+	resps, err := c.resMgtClient.SaveChannel(req,resmgmt.WithOrdererEndpoint("grpc://localhost:7050"))
 
 	if err != nil {
 		return "",err

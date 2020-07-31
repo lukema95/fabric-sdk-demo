@@ -113,7 +113,7 @@ func TestChannel(t *testing.T){
 	//	t.Errorf("Query channel failed :%s", err)
 	//}
 
-	_, err := org1Client.SaveChannel("businesschannel", "./config/businesschannel.tx")
+      	_, err := org1Client.SaveChannel("businesschannel", "./config/businesschannel.tx")
 	if err != nil {
 		//log.Panicf("Save channel failed :%s", err)
 		t.Errorf("Save channel failed :%s", err)

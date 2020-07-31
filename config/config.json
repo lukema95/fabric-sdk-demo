@@ -22,7 +22,7 @@
 
   "chaincode": {
     "id": "example2",
-    "path": "github.com/hyperledger/fabric-samples/chaincode/chaincode_example02/go/"
+    "path": "github.com/zhigui/chaincode/chaincode_example02/go/"
   },
 
   "channel": {
