@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"../service"
+	"github.com/maluning/fabric-sdk-sample/golang/service"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
@@ -39,7 +39,7 @@ var serviceCmd = &cobra.Command{
 }
 
 var fabricCmd = &cobra.Command{
-	Use: "z-ledger",
+	Use: "fabric",
 	Short: "Start fabric service",
 	Run: func(cmd *cobra.Command, args []string) {
 		service.RunFabric()
