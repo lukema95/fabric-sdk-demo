@@ -30,8 +30,8 @@ func InitConfig() {
 
 
 var serviceCmd = &cobra.Command{
-	Use: "service",
-	Short: "Run service",
+	Use: "sdk",
+	Short: "Run sdk",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Please specify the service ")
 	},

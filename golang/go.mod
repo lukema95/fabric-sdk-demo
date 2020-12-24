@@ -1,4 +1,4 @@
-module fabric-sdk-sample
+module sdk
 
 go 1.12
 

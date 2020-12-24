@@ -1,18 +1,19 @@
+
 package client
 
 import (
-	"github.com/spf13/viper"
-	"log"
-	"os"
+"github.com/spf13/viper"
+"log"
+"os"
 
-	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
-	"github.com/hyperledger/fabric-sdk-go/pkg/client/event"
-	"github.com/hyperledger/fabric-sdk-go/pkg/client/ledger"
-	"github.com/hyperledger/fabric-sdk-go/pkg/client/msp"
-	"github.com/hyperledger/fabric-sdk-go/pkg/client/resmgmt"
-	_ "github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
-	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
+"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
+"github.com/hyperledger/fabric-sdk-go/pkg/client/event"
+"github.com/hyperledger/fabric-sdk-go/pkg/client/ledger"
+"github.com/hyperledger/fabric-sdk-go/pkg/client/msp"
+"github.com/hyperledger/fabric-sdk-go/pkg/client/resmgmt"
+_ "github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
+"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
+"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
 )
 
 type Client struct {
@@ -136,13 +137,13 @@ func NewFabCA()  *Client{
 	c.SDK = sdk
 	log.Println("Initialized fabric sdk")
 
-		// create msp client
-		mctx := sdk.Context(fabsdk.WithUser(c.OrgAdmin), fabsdk.WithOrg(c.OrgName))
-		c.mspClient, err = msp.New(mctx)
-		if err != nil{
-			log.Panicf("failed to create msp client: %s", err)
-		}
-		log.Println("Initialized msp client")
+	// create msp client
+	mctx := sdk.Context(fabsdk.WithUser(c.OrgAdmin), fabsdk.WithOrg(c.OrgName))
+	c.mspClient, err = msp.New(mctx)
+	if err != nil{
+		log.Panicf("failed to create msp client: %s", err)
+	}
+	log.Println("Initialized msp client")
 
 
 	return c
