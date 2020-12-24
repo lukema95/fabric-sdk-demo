@@ -20,46 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19bfdbe9-f7f0-4ba2-909e-4ae562e596b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/fabric-sdk-sample.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Z-Ledger-SDK-Go-Sample.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/channel.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/event.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ledger.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/msp.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resmgmt.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/cmd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/businesschannel.tx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/configtx.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/org1-config.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/cmd/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/golang/cmd/cmd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/golang/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/golang/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/golang/main_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/service/fabca.go" beforeDir="false" afterPath="$PROJECT_DIR$/golang/service/fabca.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/service/fabric.go" beforeDir="false" afterPath="$PROJECT_DIR$/golang/service/fabric.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keystore/2969d75a98cb1823b17ad49600ff6e1d327a81d19212e7aa0eff186d8275281f_sk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/keystore/4b023ab54b6f5148d7222d8961d965210326ccbf894d713dab087b6085cf5505_sk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/keystore/6e8dedc6658bd1651be62e2eea4803a07a25cf7b7478ce0efebfa777be925b6b_sk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/keystore/d612965d2197262f7f7a36d9859138816387d5b164a329b4534e07f818ff15ef_sk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/keystore/e6d286b9278432e1303880251bfdd7853d5be577b831c4620083421849c2e173_sk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/chaincode.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/channel.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/event.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/fabca.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/fabric.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/ledger.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/msp.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
