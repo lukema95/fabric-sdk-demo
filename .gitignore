@@ -1,3 +1,5 @@
-golang/fabric-sdk-sample
 golang/crypto-config/*
 golang/keystore
+
+nodejs/crypto-config/*
+nodejs/node_modules/*
