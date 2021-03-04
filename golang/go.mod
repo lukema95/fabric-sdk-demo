@@ -12,4 +12,3 @@ require (
 	github.com/spf13/viper v1.7.0
 )
 
-replace github.com/maluning/fabric-sdk-sample/golang v0.0.0-20201224091207-bba746045960 => ./

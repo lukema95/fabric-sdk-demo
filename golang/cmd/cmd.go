@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/maluning/fabric-sdk-sample/golang/service"
+	"github.com/lukema95/fabric-sdk-demo/golang/service"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"

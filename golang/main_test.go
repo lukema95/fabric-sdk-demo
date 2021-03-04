@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/maluning/fabric-sdk-sample/golang/client"
-	"github.com/maluning/fabric-sdk-sample/golang/cmd"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
+	"github.com/lukema95/fabric-sdk-demo/golang/client"
+	"github.com/lukema95/fabric-sdk-demo/golang/cmd"
 	"log"
 	"testing"
 )

@@ -3,7 +3,7 @@ package service
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/maluning/fabric-sdk-sample/golang/client"
+	"github.com/lukema95/fabric-sdk-demo/golang/client"
 	"github.com/spf13/viper"
 	"log"
 	"os"
